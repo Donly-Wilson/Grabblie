@@ -26,8 +26,12 @@ Design Storm - Inspiration for developers
             <div class="col-md-3">
               <div class="box">
                 <div style="position: relative; background: url({{ $inspiration->urls->small }}) no-repeat center center;-webkit-background-size: cover;-moz-background-size: cover;-o-background-size: cover;background-size: cover; height: 200px;">
-                  <a href="/projects/inspiration/{{$inspiration->id}}/add">
-                  <div class="add-btn "><i class="fa fa-check" aria-hidden="true"></i></div>
+                  @php
+                  //Removes url special characters by encoding it
+                    $encodedUrl = urlencode($inspiration->urls->small)
+                  @endphp
+                  <a href="/projects/inspiration/{{$inspiration->id}}/add/{{ $encodedUrl }}">
+                    <div class="add-btn "><i class="fa fa-check" aria-hidden="true"></i></div>
                   </a>
                 </div>
               </div>
