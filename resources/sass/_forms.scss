@@ -1,0 +1,76 @@
+// FORMS
+label {
+    text-transform: capitalize;
+}
+
+input,
+select,
+textarea {
+    border: 1px solid #2a70ef;
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 1rem;
+
+    &:focus {
+        outline: none;
+    }
+}
+
+button {
+    min-width: 200px;
+    background: #2a70ef;
+    border: 1px solid #2a70ef;
+    color: white;
+    font-size: 1.2rem;
+    padding: 10px;
+    border-radius: 3px;
+    font-weight: 300;
+    margin: 0 auto;
+    cursor: pointer;
+    // float: right;
+}
+
+.remember-me {
+    display: flex;
+    align-items: flex-start;
+    #remember_me {
+        margin: 0;
+        width: auto;
+    }
+    span {
+        margin-left: 10px;
+    }
+}
+
+.register-section {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    a {
+        color: #000;
+        &:hover {
+            color: #ff0000;
+        }
+    }
+    button {
+        min-width: 160px;
+        margin: 0 0 0 15px;
+    }
+}
+
+.delete-btn {
+    background: red;
+    border: 1px solid red;
+    border-radius: 3px;
+    color: white;
+    display: inline-block;
+    font-size: 1.2rem;
+    padding: 10px;
+    font-weight: 300;
+    width: 100%;
+    margin: 0 auto;
+    cursor: pointer;
+    text-decoration: none;
+    text-align: center;
+    // float: right;
+}
