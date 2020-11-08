@@ -6,8 +6,12 @@ use Illuminate\Http\Request;
 
 class InspirationController extends Controller
 {
-    public function addimage()
+    public function addimage(Request $request, $image_info)
     {
-        return 'back()';
+        $saveData = [
+            "image_info" => $image_info,
+            "image_url" => $request->image_url
+        ];
+        return $saveData;
     }
 }

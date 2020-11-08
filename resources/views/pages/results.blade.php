@@ -30,7 +30,7 @@ Design Storm - Inspiration for developers
                   //Removes url special characters by encoding it
                     $encodedUrl = urlencode($inspiration->urls->small)
                   @endphp
-                  <a href="/projects/inspiration/{{$inspiration->id}}/add/{{ $encodedUrl }}">
+                  <a href="/projects/inspiration/{{$inspiration->id}}/add?image_url={{ $encodedUrl }}">
                     <div class="add-btn "><i class="fa fa-check" aria-hidden="true"></i></div>
                   </a>
                 </div>

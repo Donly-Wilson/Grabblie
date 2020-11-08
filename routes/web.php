@@ -39,7 +39,10 @@ Route::put('/account/projects/{id}', [ProjectController::class, 'update']);
 Route::get('/account/projects/{id}/delete', [ProjectController::class, 'destroy']);
 
 //* Inspirations *//
-Route::get('/projects/inspiration/{id}/add', [InspirationController::class, 'addimage'])->middleware('auth');
+Route::get(
+    '/projects/inspiration/{image_info}/add',
+    [InspirationController::class, 'addimage']
+)->middleware('auth');
 
 // Route::middleware(['auth:sanctum', 'verified'])->post('/dashboard', function () {
 //     return view('dashboard');
