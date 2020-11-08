@@ -9,4 +9,10 @@ class Project extends Model
 {
     use HasFactory;
     protected $fillable = ['title'];
+
+    //Add one to many relation (1 project has multiple inspiration)
+    public function inspirations()
+    {
+        return $this->hasMany('App\Models\Inspiration');
+    }
 }

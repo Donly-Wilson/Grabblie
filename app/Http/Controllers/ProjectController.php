@@ -35,8 +35,8 @@ class ProjectController extends Controller
     public function show($id)
     {
         //Find one project where 'id' is equal to same id from route
-        $project = Project::where('id', $id)->get();
-
+        $project = Project::where('id', $id)->first();
+        // return $project->inspirations;
         return view('account/projects/show', compact('project'));
     }
 
