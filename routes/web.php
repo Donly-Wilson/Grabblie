@@ -41,7 +41,12 @@ Route::get('/account/projects/{id}/delete', [ProjectController::class, 'destroy'
 //* Inspirations *//
 Route::get(
     '/projects/inspiration/{image_info}/add',
-    [InspirationController::class, 'addimage']
+    [InspirationController::class, 'create']
+)->middleware('auth');
+
+Route::get(
+    '/projects/inspiration/{image_info}/delete',
+    [InspirationController::class, 'destroy']
 )->middleware('auth');
 
 // Route::middleware(['auth:sanctum', 'verified'])->post('/dashboard', function () {

@@ -16,7 +16,7 @@ class CreateInspirationsTable extends Migration
         Schema::create('inspirations', function (Blueprint $table) {
             $table->id();
             $table->string('image_url');
-            $table->integer('projects_id');
+            $table->integer('project_id');
             $table->string('image_info');
             $table->timestamps();
         });
