@@ -10,7 +10,7 @@
     <div class="row">
       <div class="col-md-10">
         <h1>{{$project->title}}</h1>
-        <h6>This is Where all your projects are located</h6>
+      <h6>This is Where all your projects are located - <strong style="color: red">Author: {{ $project->user->name }} </strong></h6>
       </div>
     </div>
 

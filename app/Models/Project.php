@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Project extends Model
 {
     use HasFactory;
-    protected $fillable = ['title'];
+    protected $fillable = ['title', 'user_id'];
 
     //Add one to many relation (1 project has multiple inspiration)
     public function inspirations()
@@ -23,5 +23,11 @@ class Project extends Model
         $this->inspirations()->delete();
         //Select same parent and delete it === { project->delete() } 
         return parent::delete();
+    }
+
+    //Add many to one relation, inverse of one to many (multiple projects belong to 1 user)
+    public function user()
+    {
+        return $this->belongsTo('App\Models\User');
     }
 }

@@ -58,4 +58,10 @@ class User extends Authenticatable
     protected $appends = [
         'profile_photo_url',
     ];
+
+    //Add one to many relation (1 user has multiple projects)
+    public function projects()
+    {
+        return $this->hasMany('App\Models\Project');
+    }
 }
