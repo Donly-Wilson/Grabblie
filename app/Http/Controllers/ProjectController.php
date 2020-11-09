@@ -44,7 +44,7 @@ class ProjectController extends Controller
     public function edit($id)
     {
         //Find one project where 'id' is equal to same id from route
-        $project = Project::where('id', $id)->get();
+        $project = Project::where('id', $id)->first();
 
         return view('account/projects/edit', compact('project'));
     }
@@ -54,7 +54,7 @@ class ProjectController extends Controller
         //Update project title 
         Project::where('id', $id)
             ->update(["title" => $request->title]);
-
+        // return $id;
         return back();
     }
 

@@ -19,7 +19,7 @@
         <div class="box">
           <div class="row">
             <div class="col-md-10">
-              <form action="/account/projects/id" method="POST">
+              <form action="/account/projects/{{$project->id}}" method="POST">
                 @csrf
                 @method('PUT')
                 <div class="row">
@@ -29,17 +29,21 @@
                 </div>
                     <div class="row">
                       <div class="col-md-6">
-                      <input type="text" name="title" value="{{$project[0]->title}}">
+                      <input type="text" name="title" value="{{$project->title}}">
                       </div>
                     </div>
                     <div class="img-section">
                       <div class="row">
-                        {{-- <div class="col-md-3">
+                        @foreach ($project->inspirations as $inspiration)
+
+                        <div class="col-md-3">
                           <div class="box">
-                            <div style="position: relative; background: url(https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?ixlib=rb-1.2.1&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=400&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjE3ODI0N30) no-repeat center center;-webkit-background-size: cover;-moz-background-size: cover;-o-background-size: cover;background-size: cover; height: 200px;">
+                            <div style="position: relative; background: url('{{$inspiration->image_url}}') no-repeat center center;-webkit-background-size: cover;-moz-background-size: cover;-o-background-size: cover;background-size: cover; height: 200px;">
                             </div>
+                            <a href="/projects/inspiration/{{$inspiration->image_info}}/delete">Delete</a>
                           </div>
-                        </div> --}}
+                        </div>
+                        @endforeach
                       </div>
                     </div>
                     <button type="submit">Save</button>
@@ -47,7 +51,7 @@
             </div>
             <div class="col-md-2">
               <center>
-                <a href="/account/projects/{{$project[0]->id}}/delete" onclick="confirm()" class="delete-btn">Delete</a>
+                <a href="/account/projects/{{$project->id}}/delete" onclick="confirm()" class="delete-btn">Delete</a>
               </center>
             </div>
           </div>
