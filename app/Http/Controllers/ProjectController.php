@@ -61,7 +61,9 @@ class ProjectController extends Controller
     public function destroy($id)
     {
         //Find one project where 'id' is equal to same id from route
-        Project::where('id', $id)->delete();
+        $project = Project::where('id', $id)->first();
+        //Delete Project and inspirations within it
+        $project->deleteRelated();
 
         return redirect('account/projects');
     }

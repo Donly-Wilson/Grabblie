@@ -15,4 +15,13 @@ class Project extends Model
     {
         return $this->hasMany('App\Models\Inspiration');
     }
+
+    //Discard every inspiration together with deleted project
+    public function deleteRelated()
+    {
+        //Runs inspirations func and deletes every item within it
+        $this->inspirations()->delete();
+        //Select same parent and delete it === { project->delete() } 
+        return parent::delete();
+    }
 }
