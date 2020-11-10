@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use GuzzleHttp\Client;
-
+use App\Models\Project;
 
 class PageController extends Controller
 {
@@ -64,6 +64,10 @@ class PageController extends Controller
 
         // return count($filteredData);
         // return $filteredData;
+
+        // $inspirationArray = Project::where('user_id', Auth::id())->where('active', 1)->first();
+
+        // return $inspirationArray;
 
         // Get the currently authenticated user...
         $user = Auth::user();

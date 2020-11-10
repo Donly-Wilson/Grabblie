@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Project extends Model
 {
     use HasFactory;
-    protected $fillable = ['title', 'user_id'];
+    protected $fillable = ['title', 'user_id', 'active'];
 
     //Add one to many relation (1 project has multiple inspiration)
     public function inspirations()

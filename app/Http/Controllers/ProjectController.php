@@ -26,9 +26,14 @@ class ProjectController extends Controller
     {
         $project = new Project();
 
+        if ($request->active == 1) {
+            Project::where('user_id', Auth::id())->where('active', 1)->update(["active" => 0]);
+        }
+
         $project::create([
             'title' => $request->title,
-            'user_id' => Auth::id()
+            'user_id' => Auth::id(),
+            'active' => $request->active
         ]);
 
         return redirect("account/projects");
@@ -53,12 +58,19 @@ class ProjectController extends Controller
 
     public function update(Request $request, $id)
     {
+        if ($request->active == 1) {
+            Project::where('user_id', Auth::id())->where('active', 1)->update(["active" => 0]);
+        }
         //Update project title if project id matches
         //& Right user is logged in(won't allow changes if it's wrong user)
         Project::where('id', $id)->where(
             'user_id',
             Auth::id()
-        )->update(["title" => $request->title]);
+        )
+            ->update([
+                "title" => $request->title,
+                "active" => $request->active
+            ]);
         // return $id;
         return back();
     }
