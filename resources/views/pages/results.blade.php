@@ -31,7 +31,12 @@ Design Storm - Inspiration for developers
                     $encodedUrl = urlencode($inspiration->urls->small)
                   @endphp
                   <a href="/projects/inspiration/{{$inspiration->id}}/add?image_url={{ $encodedUrl }}">
-                    <div class="add-btn "><i class="fa fa-check" aria-hidden="true"></i></div>
+                    <div class="add-btn 
+                    @if(in_array($inspiration->id, $imageArrayId))
+                      {
+                        active
+                      }@endif
+                      "><i class="fa fa-check" aria-hidden="true"></i></div>
                   </a>
                 </div>
               </div>

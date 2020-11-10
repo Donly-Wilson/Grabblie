@@ -65,13 +65,23 @@ class PageController extends Controller
         // return count($filteredData);
         // return $filteredData;
 
-        // $inspirationArray = Project::where('user_id', Auth::id())->where('active', 1)->first();
+        $inspirationArray = Project::where('user_id', Auth::id())->where('active', 1)->first();
+        $inspirationArray = $inspirationArray->inspirations;
 
-        // return $inspirationArray;
+        //empty array to hold image id
+        $imageArrayId = [];
+
+        //pushes each image inspiration id from project
+        foreach ($inspirationArray as $image) {
+            array_push($imageArrayId, $image->image_info);
+        }
+
+        // return $inspirationImageId;
+        // return $filteredData;
 
         // Get the currently authenticated user...
         $user = Auth::user();
 
-        return view('pages/results', compact('user', 'filteredData', 'search'));
+        return view('pages/results', compact('user', 'filteredData', 'search', 'imageArrayId'));
     }
 }
