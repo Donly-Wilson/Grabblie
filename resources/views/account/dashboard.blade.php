@@ -17,7 +17,7 @@
       </div>
       <div class="col-md-3">
         <div class="box projects-total">
-          <h1>Projects Total </h1><span class="large-number">21</span>
+          <h1>Projects Total </h1><span class="large-number">{{$projectsTotal}}</span>
         </div>
       </div>
     </div>
@@ -28,10 +28,10 @@
     var myChart = new Chart(ctx, {
     type: 'line',
     data: {
-    labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
+    labels: ["Red", "Blue", "Yellow"],
     datasets: [{
     label: '# of Votes',
-    data: [12, 19, 3, 5, 2, 3],
+    data: [12, 19, 3],
     backgroundColor: [
     'rgba(255, 99, 132, 0.2)',
     'rgba(54, 162, 235, 0.2)',

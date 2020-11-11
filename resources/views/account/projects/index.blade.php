@@ -36,6 +36,9 @@
                     <td>{{$project->id}}</td>
                     <td>
                       <a href="/account/projects/{{$project->id}}">{{$project->title}}</a>
+                      @if($project->active == 1)
+                        <div style="display:inline-block; padding: 6px; background: purple; color: white">Active</div>
+                      @endif
                     </td>
                     <td><a href="/account/projects/{{$project->id}}/edit" class="edit-btn">Edit</a></td>
                   </tr>
