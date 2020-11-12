@@ -29,6 +29,7 @@
     type: 'line',
     data: {
     labels: ["Red", "Blue", "Yellow"],
+    // labels: {!! $test !!},
     datasets: [{
     label: '# of Votes',
     data: [12, 19, 3],
