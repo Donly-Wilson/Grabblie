@@ -1,7 +1,7 @@
 @extends('layouts/main')
 
 @section('title')
-Design Storm - Inspiration for developers
+Grabblie - Inspiration for developers
 @endsection
 
 @section('content')

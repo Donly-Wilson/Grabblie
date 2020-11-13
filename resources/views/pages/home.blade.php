@@ -1,7 +1,7 @@
 @extends('layouts/main')
 
 @section('title')
-  Design Storm - Inspiration for developers
+  Grabblie - Inspiration for developers
 @endsection
 
 @section('content')
@@ -13,7 +13,7 @@
           <div class="search-container">
             <form action="/results" method="post">
               @csrf
-            <h1>DesignStorm</h1>
+            <h1>Grabblie</h1>
             <input class="search" type="text" value="" placeholder="Search" name="search">
             </form>
           </div>

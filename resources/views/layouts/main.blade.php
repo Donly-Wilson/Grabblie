@@ -10,7 +10,7 @@
   </head>
   <body>
     <header>
-      <div class="container"><a class="logo" href="/">Design Storm</a>
+      <div class="container"><a class="logo" href="/">Grabblie</a>
         <nav>
           @guest
           
