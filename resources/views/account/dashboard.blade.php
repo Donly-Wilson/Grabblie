@@ -28,11 +28,12 @@
     var myChart = new Chart(ctx, {
     type: 'line',
     data: {
-    labels: ["Red", "Blue", "Yellow"],
-    // labels: {!! $test !!},
+    // labels: ["Red", "Blue", "Yellow"],
+    labels: @json($projectsTitle),
     datasets: [{
     label: '# of Votes',
-    data: [12, 19, 3],
+    // data: [12, 19, 3],
+    data: @json($InspirationsTotal),
     backgroundColor: [
     'rgba(255, 99, 132, 0.2)',
     'rgba(54, 162, 235, 0.2)',

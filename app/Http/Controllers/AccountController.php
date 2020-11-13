@@ -17,18 +17,24 @@ class AccountController extends Controller
 
     public function index(Request $request)
     {
-        $projects = Project::where('user_id', Auth::id())->get();
-
+        //Selects every project and count them
         $projectsTotal = Project::all()->count();
 
-        $projectsTitle = [];
+        //Select logged in user(ID) projects
+        $projects = Project::where('user_id', Auth::id())->get();
 
+        //Loop through projects and push title name into 'projectTitle'
+        $projectsTitle = [];
         foreach ($projects as $project) {
             array_push($projectsTitle,  $project->title);
         }
 
-        // return $projectsTitle;
-        $test = ['hello', 'world', 'man'];
-        return view('account/dashboard', compact('projectsTotal', 'projectsTitle', 'test'));
+        //Loop through projects and push unspiration sum into 'InspirationsTotal'
+        $InspirationsTotal = [];
+        foreach ($projects as $project) {
+            array_push($InspirationsTotal,  $project->inspirations->count());
+        }
+        // return $InspirationsTotal;
+        return view('account/dashboard', compact('projectsTotal', 'projectsTitle', 'InspirationsTotal'));
     }
 }
